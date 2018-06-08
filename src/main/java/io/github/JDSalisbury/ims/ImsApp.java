@@ -8,5 +8,7 @@ public class ImsApp {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ImsApp.class, args);
+
 	}
+
 }

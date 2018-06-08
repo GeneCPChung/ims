@@ -14,14 +14,14 @@ public class InventoryItem {
 	private String name;
 	private String barcode;
 	private int amount;
-	private int date;
+	private String date;
 	private String unit;
 	private String location;
 	private double price;
 	private String description;
 
-	public InventoryItem(String barcode, int amount, int date, String name, String unit, String location, double price,
-			String description) {
+	public InventoryItem(String barcode, int amount, String date, String name, String unit, String location,
+			double price, String description) {
 		this.barcode = barcode;
 		this.amount = amount;
 		this.date = date;
@@ -41,7 +41,7 @@ public class InventoryItem {
 		return amount;
 	}
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
