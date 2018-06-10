@@ -14,7 +14,7 @@ public class IMSController {
 
 	@RequestMapping("/mainPage")
 	public String getMainPage(Model model) {
-		model.addAttribute("itemsModel", itemRepo.findAll());
+		model.addAttribute("itemsModel", itemRepo.findAllByOrderByDateDesc());
 		return "index";
 	}
 }
