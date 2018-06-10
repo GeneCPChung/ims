@@ -15,15 +15,15 @@ public class ItemPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		InventoryItem testItem1 = itemRepo
-				.save(new InventoryItem("1234E", 5, "06/07/2018", "Apple", "EACH", "Aisle 10", .59, "Granny Smith"));
+				.save(new InventoryItem("1234E", 5, "06/02/2018", "Apple", "EACH", "Aisle 10", .59, "Granny Smith"));
 		InventoryItem testItem2 = itemRepo
-				.save(new InventoryItem("1234E", 5, "06/07/2018", "Banana", "EACH", "Aisle 10", .59, "Granny Smith"));
+				.save(new InventoryItem("1234E", 5, "06/01/2018", "Banana", "EACH", "Aisle 10", .59, "Granny Smith"));
 		InventoryItem testItem3 = itemRepo
-				.save(new InventoryItem("1234E", 5, "06/07/2018", "Orange", "EACH", "Aisle 10", .59, "Granny Smith"));
+				.save(new InventoryItem("1234E", 5, "06/03/2018", "Orange", "EACH", "Aisle 10", .59, "Granny Smith"));
 		InventoryItem testItem4 = itemRepo
-				.save(new InventoryItem("1234E", 5, "06/07/2018", "Grape", "EACH", "Aisle 10", .59, "Granny Smith"));
+				.save(new InventoryItem("1234E", 5, "06/03/2018", "Grape", "EACH", "Aisle 10", .59, "Granny Smith"));
 		InventoryItem testItem5 = itemRepo
-				.save(new InventoryItem("1234E", 5, "06/07/2018", "Plum", "EACH", "Aisle 10", .59, "Granny Smith"));
+				.save(new InventoryItem("1234E", 5, "06/05/2018", "Plum", "EACH", "Aisle 10", .59, "Granny Smith"));
 
 	}
 

@@ -20,6 +20,9 @@ public class InventoryItem {
 	private double price;
 	private String description;
 
+	public InventoryItem() {
+	}
+
 	public InventoryItem(String barcode, int amount, String date, String name, String unit, String location,
 			double price, String description) {
 		this.barcode = barcode;
