@@ -1,5 +1,7 @@
 package io.github.JDSalisbury.ims;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +16,7 @@ public class InventoryItem {
 	private String name;
 	private String barcode;
 	private int amount;
-	private String date;
+	private LocalDate date;
 	private String unit;
 	private String location;
 	private double price;
@@ -23,7 +25,7 @@ public class InventoryItem {
 	public InventoryItem() {
 	}
 
-	public InventoryItem(String barcode, int amount, String date, String name, String unit, String location,
+	public InventoryItem(String barcode, int amount, LocalDate date, String name, String unit, String location,
 			double price, String description) {
 		this.barcode = barcode;
 		this.amount = amount;
@@ -33,7 +35,6 @@ public class InventoryItem {
 		this.location = location;
 		this.price = price;
 		this.description = description;
-
 	}
 
 	public String getBarcode() {
@@ -44,7 +45,7 @@ public class InventoryItem {
 		return amount;
 	}
 
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
