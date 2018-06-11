@@ -45,7 +45,7 @@ public class InventoryItem {
 		return amount;
 	}
 
-	public LocalDate getDate() {
+	public LocalDate getExpirationDate() {
 		return date;
 	}
 
@@ -69,4 +69,23 @@ public class InventoryItem {
 		return name;
 	}
 
+	public int getExpireDateFromToday() {
+		return getExpirationDate().compareTo(LocalDate.now());
+	}
+
+	public Boolean isExpired() {
+		return getExpireDateFromToday() < 0;
+	}
+
+	public Boolean isExpiringTomorrow() {
+		return getExpireDateFromToday() == 0;
+	}
+
+	public Boolean isSoonToExpire() {
+		return getExpireDateFromToday() == 1;
+	}
+
+	public Boolean isOnWarningList() {
+		return isExpiringTomorrow() || isSoonToExpire() || isExpired();
+	}
 }

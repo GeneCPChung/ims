@@ -7,8 +7,8 @@
 <body>
     <p>Something</p>
 
-    <ul class="item-list" th:each="item: ${itemsModel}">
-			<li> <a th:text="${item.Name + ' Date: ' + item.Date + ' Location: ' + item.Location}"></a> </li>
+    <ul class="item-list" th:each="item: ${itemsModel}" th:if="${item.isOnWarningList()}">
+			<li> <a th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a> </li>
     </ul>
         
 <button>Add Item</button>
