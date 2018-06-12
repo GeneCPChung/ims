@@ -5,7 +5,7 @@
     <title>IMS</title>
 </head>
 <body>
-    <p>These Items are going bad.</p>
+    <h3>These Items are going bad.</h3>
 
     <ul class="item-list" th:each="item: ${itemsModel}" th:if="${item.isOnWarningList()}">
 			<li> <a th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a> </li>
@@ -14,7 +14,7 @@
         
 <a href="addItem"><button>Add Item</button></a>
 <button>Edit Item</button>
-<button>Delete Item</button>
+<a href="deleteItem"><button>Delete Item</button></a>
 <button>Look Up Item</button>
 
 </body>

@@ -41,4 +41,10 @@ public class IMSController {
 		return "addItem";
 	}
 
+	@RequestMapping("/deleteItem")
+	public String getDeletePage(Model model) {
+		model.addAttribute("itemsModel", itemRepo.findAllByOrderByDateAsc());
+		return "deleteItem";
+	}
+
 }
