@@ -6,6 +6,8 @@
 </head>
 <body>
     <h3>These Items are going bad.</h3>
+    <p>This page only shows items on the "Warning List" these are items that will expire soon, have expired and expire today.</p>
+    <p>I have three methods in the InventoryItem.class. each one checks the items date and Todays actual Date. I want isExipred items to be Red, isExpiringTomorrow items to be Yellow, isSoonToExpire items to be green.</p>
 
     <ul class="item-list" th:each="item: ${itemsModel}" th:if="${item.isOnWarningList()}">
 			<li> <a th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a> </li>
