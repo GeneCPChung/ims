@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Item</title>
-</head>
+</head>    
 <body>
     <h3>Please enter Item Info</h3>
     <form method="POST" action="/add-Item-Form" onsubmit="myButton.disabled = true; return true;">
@@ -50,8 +50,8 @@
     
     <ul class="item-list" th:each="item: ${itemsModel}" >
         <li> <a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a> </li>
-</ul>
-        
+    </ul>
+    
 <a href="mainPage"><button>Home</button></a>
 <button>Edit Item</button>
 <button>Delete Item</button>

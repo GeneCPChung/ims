@@ -22,15 +22,17 @@ public class IMSController {
 	}
 
 	@RequestMapping("/addItem")
-	public String getAddItemPage(Model model) {
+	public String lastAddedItem(Model model) {
 		model.addAttribute("itemsModel", itemRepo.findTop3ByOrderByIdDesc());
 		return "addItem";
 	}
 
 	@RequestMapping("/add-Item-Form")
-	public String userFormProcessing(@RequestParam String barcode, @RequestParam int quantity,
+	public String userFormProcessing(Model model, @RequestParam String barcode, @RequestParam int quantity,
 			@RequestParam String expirationDateString, @RequestParam String itemName, @RequestParam String unit,
 			@RequestParam String location, @RequestParam double price, @RequestParam String description) {
+		model.addAttribute("itemsModel", itemRepo.findTop3ByOrderByIdDesc());
+
 		LocalDate localDate = LocalDate.parse(expirationDateString);
 		InventoryItem item = new InventoryItem(barcode, quantity, localDate, itemName, unit, location, price,
 				description);
