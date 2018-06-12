@@ -15,7 +15,7 @@ public class InventoryItem {
 
 	private String name;
 	private String barcode;
-	private int amount;
+	private int quantity;
 	private LocalDate date;
 	private String unit;
 	private String location;
@@ -25,10 +25,10 @@ public class InventoryItem {
 	public InventoryItem() {
 	}
 
-	public InventoryItem(String barcode, int amount, LocalDate date, String name, String unit, String location,
+	public InventoryItem(String barcode, int quantity, LocalDate date, String name, String unit, String location,
 			double price, String description) {
 		this.barcode = barcode;
-		this.amount = amount;
+		this.quantity = quantity;
 		this.date = date;
 		this.name = name;
 		this.unit = unit;
@@ -41,8 +41,8 @@ public class InventoryItem {
 		return barcode;
 	}
 
-	public int getAmount() {
-		return amount;
+	public int getQuantity() {
+		return quantity;
 	}
 
 	public LocalDate getExpirationDate() {

@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>IMS</title>
 </head>
 <body>
-    <p>Something</p>
+    <p>These Items are going bad.</p>
 
     <ul class="item-list" th:each="item: ${itemsModel}" th:if="${item.isOnWarningList()}">
 			<li> <a th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a> </li>
     </ul>
+
         
-<button>Add Item</button>
+<a href="addItem"><button>Add Item</button></a>
 <button>Edit Item</button>
 <button>Delete Item</button>
 <button>Look Up Item</button>
