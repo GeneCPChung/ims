@@ -8,11 +8,11 @@
     <h3>Be Careful On this Page</h3>
 
     <ul class="item-list" th:each="item: ${itemsModel}">
-            <li><button>Remove</button><a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a></li>
+            <li><button for="id" name="id">Remove</button><a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a></li>
         </ul>
 
         
-<a href="addItem"><button>Add Item</button></a>
+<a href="addItemPage"><button>Add Item</button></a>
 <button>Edit Item</button>
 <a href="mainPage"><button>Home</button></a>
 <button>Look Up Item</button>
