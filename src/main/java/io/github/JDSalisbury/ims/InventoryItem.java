@@ -69,6 +69,10 @@ public class InventoryItem {
 		return name;
 	}
 
+	public long getId() {
+		return id;
+	}
+
 	public int getExpireDateFromToday() {
 		return getExpirationDate().compareTo(LocalDate.now());
 	}

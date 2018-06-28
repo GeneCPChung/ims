@@ -1,13 +1,10 @@
 package io.github.JDSalisbury.ims;
 
-import java.time.LocalDate;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class IMSController {
@@ -27,18 +24,22 @@ public class IMSController {
 		return "addItemPage";
 	}
 
-	@RequestMapping("/add-Item-Form")
-	public String userFormProcessing(@RequestParam String barcode, @RequestParam int quantity,
-			@RequestParam String expirationDateString, @RequestParam String itemName, @RequestParam String unit,
-			@RequestParam String location, @RequestParam double price, @RequestParam String description) {
-
-		LocalDate localDate = LocalDate.parse(expirationDateString);
-		InventoryItem item = new InventoryItem(barcode, quantity, localDate, itemName, unit, location, price,
-				description);
-		itemRepo.save(item);
-
-		return "redirect:/addItemPage";
-	}
+	// @RequestMapping("/add-Item-Form")
+	// public String userFormProcessing(@RequestParam String barcode, @RequestParam
+	// int quantity,
+	// @RequestParam String expirationDateString, @RequestParam String itemName,
+	// @RequestParam String unit,
+	// @RequestParam String location, @RequestParam double price, @RequestParam
+	// String description) {
+	//
+	// LocalDate localDate = LocalDate.parse(expirationDateString);
+	// InventoryItem item = new InventoryItem(barcode, quantity, localDate,
+	// itemName, unit, location, price,
+	// description);
+	// itemRepo.save(item);
+	//
+	// return "redirect:/addItemPage";
+	// }
 
 	@RequestMapping("/deleteItem")
 	public String getDeletePage(Model model) {

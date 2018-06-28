@@ -8,7 +8,9 @@
     <h3>Be Careful On this Page</h3>
 
     <ul class="item-list" th:each="item: ${itemsModel}">
-            <li><button for="id" name="id">Remove</button><a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a></li>
+            <div>
+                <li><button id="deleteButton" th:attr="data-id=${item.id}" for="id" name="id">Remove</button><a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a></li>
+            </div>
         </ul>
 
         
@@ -16,6 +18,7 @@
 <button>Edit Item</button>
 <a href="mainPage"><button>Home</button></a>
 <button>Look Up Item</button>
+<script src="../js/addRemove.js"></script>
 
 </body>
 </html>
