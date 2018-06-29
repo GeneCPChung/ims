@@ -7,11 +7,12 @@
 <body>
     <h3>Be Careful On this Page</h3>
 
-    <ul class="item-list" th:each="item: ${itemsModel}">
-            <div>
-                <li><button id="deleteButton" th:attr="data-id=${item.id}" for="id" name="id">Remove</button><a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a></li>
-            </div>
-        </ul>
+    <div class="item-list" th:each="item: ${itemsModel}">
+        <div th:id="'item-'+ ${item.id}">
+        <a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+            <button type="submit" class="deleteItem" th:attr="data-id=${item.id}" for="id" name="id">Remove</button>
+        </div>
+    </div>
 
         
 <a href="addItemPage"><button>Add Item</button></a>

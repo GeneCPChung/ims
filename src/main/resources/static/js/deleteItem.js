@@ -1,13 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-    const deleteItemButtonsCollection = document.querySelectorAll('#deleteItem');
+    const deleteItemButtonsCollection = document.querySelectorAll('.deleteItem');
     deleteItemButtonList = Array.from(deleteItemButtonsCollection)
 	deleteItemButtonList.forEach( function(deleteItemButton){
 		deleteItemButton.addEventListener('click', deleteItem)
 });
 
 function deleteItem(event) {
-    event.preventDefault();//prevents forms from refreshing
 	const theButton = event.target
 	const theDivWrappingTheButton = theButton.parentElement
 	console.log(theButton)
@@ -22,7 +21,7 @@ function deleteItem(event) {
 			theDivWrappingTheButton.parentElement.removeChild(theDivWrappingTheButton)
 		}
 	}
-	xhr.open('DELETE', '/deleteTheItem/' +id,true)
+	xhr.open('DELETE', '/deleteTheItem/' + encodeURI(id),true)
 	//id and title are retrieved with the button press
 	xhr.send()
 }});

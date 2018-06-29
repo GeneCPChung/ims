@@ -1,5 +1,6 @@
 package io.github.JDSalisbury.ims;
 
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 import java.time.LocalDate;
@@ -27,9 +28,9 @@ public class ImsRestController {
 		itemRepo.save(item);
 	}
 
-	// @RequestMapping(path = "/deleteTheItem/{itemId}", method = DELETE)
-	// public void userFormDeleting(@PathVariable long itemId) {
-	// itemRepo.deleteById(itemId);
-	// }
+	@RequestMapping(path = "/deleteTheItem/{itemId}", method = DELETE)
+	public void userFormDeleting(@PathVariable long itemId) {
+		itemRepo.deleteById(itemId);
+	}
 
 }
