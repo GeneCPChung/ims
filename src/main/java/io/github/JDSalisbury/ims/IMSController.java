@@ -12,7 +12,7 @@ public class IMSController {
 	@Resource
 	private InventoryItemRepository itemRepo;
 
-	@RequestMapping("/mainPage")
+	@RequestMapping("/")
 	public String getMainPage(Model model) {
 		model.addAttribute("itemsModel", itemRepo.findAllByOrderByDateAsc());
 		return "index";
