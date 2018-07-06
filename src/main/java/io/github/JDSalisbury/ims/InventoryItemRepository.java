@@ -9,4 +9,5 @@ public interface InventoryItemRepository extends CrudRepository<InventoryItem, L
 	List<InventoryItem> findAllByOrderByDateAsc();
 
 	List<InventoryItem> findTop3ByOrderByIdDesc();
+
 }
