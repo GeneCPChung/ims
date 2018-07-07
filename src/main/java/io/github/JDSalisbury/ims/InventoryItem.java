@@ -73,6 +73,38 @@ public class InventoryItem {
 		return id;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public int getExpireDateFromToday() {
 		return getExpirationDate().compareTo(LocalDate.now());
 	}

@@ -4,17 +4,67 @@
     <meta charset="UTF-8"></meta>
     <title>IMS</title>
 </head>
+<script>
+    function goBack() {
+            window.history.back();
+    }
+</script>
 <body>
 
     <div class="item" th:each="item: ${editModel}">
-            <div th:id="'item-'+ ${item.id}">
-        <a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
-            </div>
-    </div>    
-<a href="addItemPage"><button>Add Item</button></a>
-<button>Edit Item</button>
-<a href="deleteItem"><button>Delete Item</button></a>
-<button>Look Up Item</button>
+        <div th:id="'item-'+ ${item.id}">
+            <a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+        </div>
+    </div> 
+    
+    <form method="PUT"  onsubmit="myButton.disabled = true; return true;">
+
+            <label for="barcode">Barcode:</label>
+            <input type="text" name="barcode" maxlength="200" id="barcode" autofocus="true" required="true"/>
+    
+            <br />
+    
+            <label for="quantity">Quantity:</label>
+            <input type="text" name="quantity" maxlength="200" id="quantity" required="true"/>
+    
+            <br />
+    
+            <label for="expirationDateString">Expiration Date:</label>
+            <input type="date" name="expirationDateString" id="expirationDateString" required="true"/>
+    
+            <br />
+    
+            <label for="itemName">Item Name:</label>
+            <input type="text" name="itemName" id="itemName" required="true"/>
+    
+            <br />
+    
+            <label for="unit">Unit:</label>
+            <input type="text" name="unit" id="unit" required="true"/>
+    
+            <br />
+    
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" required="true"/>
+    
+            <br />
+    
+            <label for="price">Price per Unit:</label>
+            <input type="text" name="price" id="price" required="true"/>
+    
+            <br />
+    
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required="true"/>
+    
+            <p><input type="submit" id="addItem" name="myButton" value="Add Item"/></p>
+        </form> 
+        
+        <ul class="item-list" th:each="item: ${itemsModel}" >
+            <li> <a th:href="@{/editItem/(id=${item.id})}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a> </li>
+        </ul>
+<button onclick="goBack()">Go Back</button>
+
 
 </body>
 </html>
