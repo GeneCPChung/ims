@@ -12,7 +12,7 @@
 <body>
 
     <div class="item" th:each="item: ${editModel}">
-        <div th:id="'item-'+ ${item.id}">
+        <div th:attr="data-id=${item.id}" id="itemId"  name="id"  th:value="${item.id}">
             <a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
         </div>
     </div> 
@@ -60,10 +60,9 @@
             <p><input type="submit" id="addItem" name="myButton" value="Add Item"/></p>
         </form> 
         
-        <ul class="item-list" th:each="item: ${itemsModel}" >
-            <li> <a th:href="@{/editItem/(id=${item.id})}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a> </li>
-        </ul>
+        
 <button onclick="goBack()">Go Back</button>
+<script src="../js/editItem.js"></script>
 
 
 </body>

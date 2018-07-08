@@ -11,7 +11,6 @@ function deleteItem(event) {
 	const theDivWrappingTheButton = theButton.parentElement
 	console.log(theButton)
 	const id = theButton.dataset.id
-	// do ajax request to /remove-tag?id={id}&bookReviewTitle={title}
 	const xhr = new XMLHttpRequest()//ajax request 
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {

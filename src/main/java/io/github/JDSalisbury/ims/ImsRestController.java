@@ -34,7 +34,7 @@ public class ImsRestController {
 	}
 
 	@RequestMapping(path = "/editTheItem/{id}/{barcode}/{quantity}/{expirationDateString}/{itemName}/{unit}/{location}/{price}/{description}", method = PUT)
-	public void editFormProcessing(@PathVariable Long id, @PathVariable String barcode, @PathVariable int quantity,
+	public void editFormProcessing(@PathVariable long id, @PathVariable String barcode, @PathVariable int quantity,
 			@PathVariable String expirationDateString, @PathVariable String itemName, @PathVariable String unit,
 			@PathVariable String location, @PathVariable double price, @PathVariable String description) {
 		LocalDate localDate = LocalDate.parse(expirationDateString);
@@ -42,7 +42,6 @@ public class ImsRestController {
 
 		if (barcode != null)
 			editItem.setBarcode(barcode);
-
 		if (expirationDateString != null)
 			editItem.setDate(localDate);
 		if (description != null)
