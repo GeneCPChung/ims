@@ -4,9 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	editItemButton.addEventListener('click',editItem)
 });
 
-function editItem(event){
-    event.preventDefault();
-    
+function editItem(){
     const id = document.querySelector('#itemId').dataset.id
     const barcode = document.querySelector('#barcode').value
     const quantity = document.querySelector('#quantity').value
@@ -24,6 +22,6 @@ function editItem(event){
 		}
 		
 	}
-    xhr.open('PUT', '/addTheItem/'+ encodeURI(id) + '/' + barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
+    xhr.open('PUT', '/addTheItem/'+ id + '/' + barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
     xhr.send()
 };

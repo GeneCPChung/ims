@@ -34,9 +34,10 @@ public class ImsRestController {
 	}
 
 	@RequestMapping(path = "/editTheItem/{id}/{barcode}/{quantity}/{expirationDateString}/{itemName}/{unit}/{location}/{price}/{description}", method = PUT)
-	public void editFormProcessing(@PathVariable long id, @PathVariable String barcode, @PathVariable int quantity,
-			@PathVariable String expirationDateString, @PathVariable String itemName, @PathVariable String unit,
-			@PathVariable String location, @PathVariable double price, @PathVariable String description) {
+	public void editFormProcessing(@PathVariable(value = "id") long id, @PathVariable String barcode,
+			@PathVariable int quantity, @PathVariable String expirationDateString, @PathVariable String itemName,
+			@PathVariable String unit, @PathVariable String location, @PathVariable double price,
+			@PathVariable String description) {
 		LocalDate localDate = LocalDate.parse(expirationDateString);
 		InventoryItem editItem = itemRepo.findById(id).orElse(null);
 		// if (barcode != null)
@@ -57,7 +58,6 @@ public class ImsRestController {
 		editItem.setUnit(unit);
 
 		itemRepo.save(editItem);
-
 	}
 
 }
