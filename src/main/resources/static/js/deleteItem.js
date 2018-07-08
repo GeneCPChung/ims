@@ -9,18 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
 function deleteItem(event) {
 	const theButton = event.target
 	const theDivWrappingTheButton = theButton.parentElement
-	console.log(theButton)
 	const id = theButton.dataset.id
-	const xhr = new XMLHttpRequest()//ajax request 
+	const xhr = new XMLHttpRequest()
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.response);
-            console.log(id);			
-			// delete the tag from DOM
 			theDivWrappingTheButton.parentElement.removeChild(theDivWrappingTheButton)
 		}
 	}
 	xhr.open('DELETE', '/deleteTheItem/' + encodeURI(id),true)
-	//id and title are retrieved with the button press
 	xhr.send()
 }});

@@ -1,11 +1,11 @@
-addItem
+editItem
 document.addEventListener("DOMContentLoaded", function() {
-	const addItemButton = document.querySelector('#addItem');
-	addItemButton.addEventListener('click',addItem)
+	const editItemButton = document.querySelector('#addItem');
+	editItemButton.addEventListener('click',editItem)
 });
 
-function addItem(event){
-    // event.preventDefault();//prevents forms from refreshing
+function editItem(event){
+    event.preventDefault();
     
     const id = document.querySelector('#itemId').dataset.id
     const barcode = document.querySelector('#barcode').value
@@ -19,10 +19,11 @@ function addItem(event){
 	const xhr = new XMLHttpRequest()
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {
-			console.log(xhr);
+            console.log(xhr);
+            console.log(id);
 		}
 		
 	}
     xhr.open('PUT', '/addTheItem/'+ encodeURI(id) + '/' + barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
     xhr.send()
-}
+};

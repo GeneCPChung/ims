@@ -28,9 +28,9 @@ public class ImsRestController {
 		itemRepo.save(item);
 	}
 
-	@RequestMapping(path = "/deleteTheItem/{itemId}", method = DELETE)
-	public void userFormDeleting(@PathVariable long itemId) {
-		itemRepo.deleteById(itemId);
+	@RequestMapping(path = "/deleteTheItem/{id}", method = DELETE)
+	public void userFormDeleting(@PathVariable long id) {
+		itemRepo.deleteById(id);
 	}
 
 	@RequestMapping(path = "/editTheItem/{id}/{barcode}/{quantity}/{expirationDateString}/{itemName}/{unit}/{location}/{price}/{description}", method = PUT)
@@ -39,23 +39,22 @@ public class ImsRestController {
 			@PathVariable String location, @PathVariable double price, @PathVariable String description) {
 		LocalDate localDate = LocalDate.parse(expirationDateString);
 		InventoryItem editItem = itemRepo.findById(id).orElse(null);
-
-		if (barcode != null)
-			editItem.setBarcode(barcode);
-		if (expirationDateString != null)
-			editItem.setDate(localDate);
-		if (description != null)
-			editItem.setDescription(description);
-		if (location != null)
-			editItem.setLocation(location);
-		if (itemName != null)
-			editItem.setName(itemName);
-		if (price != 0)
-			editItem.setPrice(price);
-		if (quantity != 0)
-			editItem.setQuantity(quantity);
-		if (unit != null)
-			editItem.setUnit(unit);
+		// if (barcode != null)
+		editItem.setBarcode(barcode);
+		// if (expirationDateString != null)
+		editItem.setDate(localDate);
+		// if (description != null)
+		editItem.setDescription(description);
+		// if (location != null)
+		editItem.setLocation(location);
+		// if (itemName != null)
+		editItem.setName(itemName);
+		// if (price != 0)
+		editItem.setPrice(price);
+		// if (quantity != 0)
+		editItem.setQuantity(quantity);
+		// if (unit != null)
+		editItem.setUnit(unit);
 
 		itemRepo.save(editItem);
 
