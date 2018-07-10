@@ -19,10 +19,10 @@ public class IMSController {
 		return "index";
 	}
 
-	@RequestMapping("/addItemPage")
+	@RequestMapping("/item/add")
 	public String lastAddedItem(Model model) {
 		model.addAttribute("itemsModel", itemRepo.findTop3ByOrderByIdDesc());
-		return "addItemPage";
+		return "add";
 	}
 
 	@RequestMapping("/item/{id}")
@@ -31,10 +31,10 @@ public class IMSController {
 		return "item";
 	}
 
-	@RequestMapping("/deleteItem")
+	@RequestMapping("/item/delete")
 	public String getDeletePage(Model model) {
 		model.addAttribute("itemsModel", itemRepo.findAllByOrderByDateAsc());
-		return "deleteItem";
+		return "delete";
 	}
 
 }
