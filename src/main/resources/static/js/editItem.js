@@ -22,6 +22,6 @@ function editItem(){
 		}
 		
 	}
-    xhr.open('PUT', '/addTheItem/'+ id + '/' + barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
+    xhr.open('PUT', '/editTheItem/' + id + '/' + barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
     xhr.send()
 };

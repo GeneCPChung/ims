@@ -52,7 +52,7 @@
     </form> 
     
     <ul class="item-list" th:each="item: ${itemsModel}" >
-        <li> <a th:href="@{/editItem/(id=${item.id})}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a> </li>
+        <li> <a th:href="@{'/item/'+${item.id}}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a> </li>
     </ul>
     
 <a href="/"><button>Home</button></a>

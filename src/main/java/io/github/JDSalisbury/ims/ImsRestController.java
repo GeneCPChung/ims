@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 import javax.annotation.Resource;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +20,10 @@ public class ImsRestController {
 	private InventoryItemRepository itemRepo;
 
 	@RequestMapping(path = "/addTheItem/{barcode}/{quantity}/{expirationDateString}/{itemName}/{unit}/{location}/{price}/{description}", method = POST)
-	public void userFormProcessing(@PathVariable String barcode, @PathVariable int quantity,
+	public void userFormProcessing(Model model, @PathVariable String barcode, @PathVariable int quantity,
 			@PathVariable String expirationDateString, @PathVariable String itemName, @PathVariable String unit,
 			@PathVariable String location, @PathVariable double price, @PathVariable String description) {
+		model.addAttribute("itemsModel", itemRepo.findTop3ByOrderByIdDesc());
 		LocalDate localDate = LocalDate.parse(expirationDateString);
 		InventoryItem item = new InventoryItem(barcode, quantity, localDate, itemName, unit, location, price,
 				description);

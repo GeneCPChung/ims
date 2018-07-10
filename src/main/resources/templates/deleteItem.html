@@ -9,7 +9,7 @@
 
     <div class="item-list" th:each="item: ${itemsModel}">
         <div th:id="'item-'+ ${item.id}">
-        <a th:href="@{/editItem/(id=${item.id})}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+        <a th:href="@{'/item/'+${item.id}}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
             <button type="submit" class="deleteItem" th:attr="data-id=${item.id}" for="id" name="id">Remove</button>
         </div>
     </div>

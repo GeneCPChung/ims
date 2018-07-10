@@ -17,10 +17,13 @@ function addItem(){
 	const xhr = new XMLHttpRequest()
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {
-			console.log(xhr);
+            console.log(xhr);
+            
+
 		}
 		
-	}
+    }
+    window.location.reload();
     xhr.open('POST', '/addTheItem/'+ barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
     xhr.send()
 }
