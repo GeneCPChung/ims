@@ -18,7 +18,7 @@ function addItem(){
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {
             console.log(xhr);
-            
+
 
 		}
 		
@@ -26,5 +26,7 @@ function addItem(){
     xhr.open('POST', '/addTheItem/'+ barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
     xhr.send()
 }
+
+
 
 
