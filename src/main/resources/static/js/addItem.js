@@ -23,7 +23,6 @@ function addItem(){
 		}
 		
     }
-    window.location.reload();
     xhr.open('POST', '/addTheItem/'+ barcode + '/' + quantity + '/' + expirationDateString + '/' + itemName + '/' + unit + '/' + location + '/' + price + '/' + description, true)
     xhr.send()
 }
