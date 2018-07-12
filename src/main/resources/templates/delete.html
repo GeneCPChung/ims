@@ -10,7 +10,7 @@
     <div class="item-list" th:each="item: ${itemsModel}">
         <div th:id="'item-'+ ${item.id}">
         <a th:href="@{'/item/'+${item.id}}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
-            <button onclick="confirm('Are you sure you want to delete this Item?')" type="submit" class="deleteItem" th:attr="data-id=${item.id}" for="id" name="id">Remove</button>
+            <button type="submit" class="deleteItem" th:attr="data-id=${item.id}" for="id" name="id">Remove</button>
         </div>
     </div>
 
