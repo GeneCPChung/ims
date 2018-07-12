@@ -14,3 +14,9 @@ function valueLock(){
         console.log(locationValue);
     }
 };
+
+// $('.location').click(function(){
+//     $(this).prev().val(function(){
+//         return this.defaultValue;
+//     })
+// })
