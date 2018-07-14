@@ -11,8 +11,10 @@
 
         <header class="header">
             <img  class="main__logo" src="./images/wolf.png"/>
-            <h3>These Items are going bad.</h3>
-            <p>Items next to Red squares are Expired, items next to Yellow squares are going to expire and items in green are soon to expire.</p>
+            <div class="title">
+                <h3>These Items are going bad.</h3>
+                <p>Items next to Red squares are Expired, items next to Yellow squares are going to expire and items in green are soon to expire.</p>
+            </div>
         </header>
         <div class="item__list">
             <div class="expire__items" th:each="item: ${itemsModel}">

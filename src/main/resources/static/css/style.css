@@ -3,49 +3,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
     text-decoration: none;
 }
 
-.expire__items{
-    margin: 1%;
-    list-style-position: inside;
-    list-style-type: square;
-
-}
-
 .header{
-    background-color: aqua;
-}
-
-.item-Expired{
-    color: red;
-
-    padding: 5px;
-    border-radius: 10px;
-    border: 1px solid black;
-
-    box-shadow: inset 0px 0px 2px 0px red;
-
-}
-
-
-.item-Expiring{
-    color: yellow;
-    box-shadow: inset 0px 0px 2px 0px yellow;
-    padding: 5px;
-    border-radius: 10px;
-    border: 1px solid black;
-
-}
-
-.item-Soon{
-    color: green;
-    box-shadow: inset 0px 0px 2px 0px green;
-    padding: 5px;
-    border-radius: 10px;
-    border: 1px solid black;
-
+    background-image: url('../images/header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 1px 4px 0px #020202;
+    z-index: 1;
 }
 
 .main__logo{
@@ -53,20 +20,22 @@
     width: 100px;
 }
 
+.nav__bar{
+    background-color: aliceblue;
+}
+
 .add_item_button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 16px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
-   
 }
 
 .add_item_button {
@@ -81,19 +50,17 @@
 }
 
 .delete_button {
-    background-color: rgb(243, 97, 73); /* Green */
+    background-color: rgb(243, 97, 73);
     border: none;
     color: white;
     padding: 16px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
-   
 }
 
 .delete_button {
@@ -106,3 +73,43 @@
     background-color: rgb(243, 97, 73);
     color: white;
 }
+
+.item__list{
+    background-color: aliceblue;
+}
+
+.expire__items{
+    margin: 1%;
+    list-style-position: inside;
+    list-style-type: square;    
+}
+
+
+.item-Expired{
+    color: red;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: inset 0px 0px 2px 0px red;
+}
+
+
+.item-Expiring{
+    color: yellow;
+    background-color: white;
+    box-shadow: inset 0px 0px 2px 0px yellow;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.item-Soon{
+    color: green;
+    background-color: white;
+    box-shadow: inset 0px 0px 2px 0px green;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
