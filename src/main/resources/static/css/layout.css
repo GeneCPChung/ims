@@ -1,0 +1,40 @@
+.container{
+    display: grid;
+    grid-template-areas: "head head . ."
+                         "nav  . . ."
+                         "list list . ."
+                         "list list . .";
+
+    grid-gap: 1rem;
+    padding: 1rem;
+    
+}
+
+.header{
+    grid-area: head;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.main__logo{
+        
+}
+
+
+.item__list{
+    grid-area: list;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+
+
+}
+
+.nav__bar{
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
