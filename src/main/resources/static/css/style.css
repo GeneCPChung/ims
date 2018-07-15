@@ -21,7 +21,6 @@
 }
 
 .nav__bar{
-    background-color: aliceblue;
 }
 
 .add_item_button {
@@ -75,13 +74,16 @@
 }
 
 .item__list{
-    background-color: aliceblue;
+    border: 1px solid black;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 5px 0px rgb(0, 0, 0);
+
 }
 
 .expire__items{
     margin: 1%;
     list-style-position: inside;
-    list-style-type: square;    
+    list-style-type: square; 
 }
 
 
@@ -90,7 +92,7 @@
     padding: 5px;
     border-radius: 10px;
     background-color: white;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-shadow: inset 0px 0px 2px 0px red;
 }
 
@@ -101,7 +103,7 @@
     box-shadow: inset 0px 0px 2px 0px yellow;
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .item-Soon{
@@ -110,6 +112,6 @@
     box-shadow: inset 0px 0px 2px 0px green;
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
