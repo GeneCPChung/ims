@@ -10,4 +10,6 @@ public interface InventoryItemRepository extends CrudRepository<InventoryItem, L
 
 	List<InventoryItem> findTop3ByOrderByIdDesc();
 
+	List<InventoryItem> findAllByBarcode(String barcode);
+
 }

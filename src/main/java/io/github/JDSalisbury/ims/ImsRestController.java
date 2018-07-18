@@ -1,6 +1,7 @@
 package io.github.JDSalisbury.ims;
 
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 
 import javax.annotation.Resource;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,24 +42,20 @@ public class ImsRestController {
 			@PathVariable String description) {
 		LocalDate localDate = LocalDate.parse(expirationDateString);
 		InventoryItem editItem = itemRepo.findById(id).orElse(null);
-		// if (barcode != null)
 		editItem.setBarcode(barcode);
-		// if (expirationDateString != null)
 		editItem.setDate(localDate);
-		// if (description != null)
 		editItem.setDescription(description);
-		// if (location != null)
 		editItem.setLocation(location);
-		// if (itemName != null)
 		editItem.setName(itemName);
-		// if (price != 0)
 		editItem.setPrice(price);
-		// if (quantity != 0)
 		editItem.setQuantity(quantity);
-		// if (unit != null)
 		editItem.setUnit(unit);
-
 		itemRepo.save(editItem);
+	}
+
+	@RequestMapping(path = "/searchBy/{barcode}", method = GET)
+	public void searchAllByBarcode(@PathVariable String barcode, Model model) {
+		model.addAttribute("foundItems", itemRepo.findAllByBarcode(barcode));
 	}
 
 }

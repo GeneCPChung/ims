@@ -37,4 +37,9 @@ public class IMSController {
 		return "delete";
 	}
 
+	@RequestMapping("/item/find")
+	public String getFindPage(Model model) {
+		model.addAttribute("foundItems", itemRepo.findAllByBarcode(null));
+		return "find";
+	}
 }
