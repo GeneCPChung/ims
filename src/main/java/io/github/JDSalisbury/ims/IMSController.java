@@ -38,8 +38,7 @@ public class IMSController {
 	}
 
 	@RequestMapping("/item/find")
-	public String getFindPage(Model model) {
-		model.addAttribute("foundItems", itemRepo.findAllByBarcode(null));
+	public String getFindPage() {
 		return "find";
 	}
 }

@@ -54,8 +54,9 @@ public class ImsRestController {
 	}
 
 	@RequestMapping(path = "/searchBy/{barcode}", method = GET)
-	public void searchAllByBarcode(@PathVariable String barcode, Model model) {
+	public String searchAllByBarcode(@PathVariable String barcode, Model model) {
 		model.addAttribute("foundItems", itemRepo.findAllByBarcode(barcode));
+		return "find";
 	}
 
 }
